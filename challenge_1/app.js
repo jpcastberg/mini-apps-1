@@ -2,6 +2,13 @@ var board = [['','',''],['','',''],['','','']];
 
 var currentPlayer = 'X';
 var winningBoard = false;
+var moveCount = 0;
+
+var XName = 'X';
+var OName = 'O';
+
+var XWins = 0;
+var OWins = 0;
 
 ///////////////////////////
 // WIN CHECKERS
@@ -57,7 +64,7 @@ const diagonalWinChecker = () => {
 }
 
 const checkForWin = (row, col) => {
-  
+ 
   horizontalWinChecker(row);
   verticalWinChecker(col);
   diagonalWinChecker();
@@ -65,11 +72,18 @@ const checkForWin = (row, col) => {
   if (winningBoard) {
     setTimeout(() => {
       alert(currentPlayer + ' wins!');
-      resetBoard();
+      currentPlayer === 'X' ? XWins++ : OWins++;
+      document.getElementById('x-wins').innerHTML = 'X Wins: ' + XWins;
+      document.getElementById('o-wins').innerHTML = 'O Wins: ' + OWins;
+      resetBoard(currentPlayer);
     }, 100);
   }
   
 }
+
+///////////////////////////
+// HELPERS
+///////////////////////////
 
 const checkValidityOfMoveAndPlacePiece = (location) => {
   var row = parseInt(location[0]);
@@ -84,8 +98,10 @@ const checkValidityOfMoveAndPlacePiece = (location) => {
   }
 }
 
-const resetBoard = () => {
+const resetBoard = (winner) => {
   winningBoard = false;
+  currentPlayer = winner || 'X';
+  moveCount = 0;
   board = [['','',''],['','',''],['','','']];
   for (var i = 0; i < 3; i++) {
     for (var j = 0; j < 3; j++) {
@@ -93,12 +109,11 @@ const resetBoard = () => {
       document.getElementById(idName).innerHTML = '';
     }
   }
+  document.getElementById('your-move').innerHTML = 'It\'s your move, ' + currentPlayer + '!'; ;
 }
 
-//var board = [['O','O','X'],['O','X','O'],['X','O','O']];
-
 ///////////////////////////
-// DOM MANIPULATION
+// EVENT HANDLERS
 ///////////////////////////
 
 
@@ -108,26 +123,24 @@ document.addEventListener('click', (event) => {
     var location = event.target.id;
     if (checkValidityOfMoveAndPlacePiece(location)) {
       event.target.innerHTML = currentPlayer;
-      if(!winningBoard) {
-        currentPlayer === 'X' ? currentPlayer = 'O' : currentPlayer = 'X';
-        document.getElementById('your-move').innerHTML = 'It\'s your move, ' + currentPlayer + '!';
+      moveCount++;
+      if (!winningBoard) {
+        //HANDLE DRAW
+        if (moveCount === 9) {
+          setTimeout(() => {
+            alert('It\'s a draw!')
+            resetBoard();
+          }, 100);
+        } else {
+          currentPlayer === 'X' ? currentPlayer = 'O' : currentPlayer = 'X';
+          document.getElementById('your-move').innerHTML = 'It\'s your move, ' + currentPlayer + '!'; 
+        }
       }
     }
   }
   
-  // if (event.target.className = 'reset') {
-  //   resetBoard();
-  // }
+  if (event.target.id === 'reset') {
+    resetBoard();
+  }
   
 });
-
-
-/*
-    _getFirstRowColumnIndexForMajorDiagonalOn: function(rowIndex, colIndex) {
-      return colIndex - rowIndex;
-    },
-
-    _getFirstRowColumnIndexForMinorDiagonalOn: function(rowIndex, colIndex) {
-      return colIndex + rowIndex;
-    },
-*/
