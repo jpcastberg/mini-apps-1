@@ -12,9 +12,8 @@ body {
   border: solid;
   border-color: black;
   height: 120px;
-  width:  120px;
+  width: 120px;
   text-align: center;
-  vertical-align: middle;
   float: left;
   font-size: 110px;
   cursor: pointer;
@@ -25,11 +24,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.game-board {
-  width: 380px;
-  display: flex;
 }
 
 #reset {
