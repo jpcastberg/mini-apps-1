@@ -6,13 +6,14 @@ body {
 }
 
 .square {
+  position: relative;
   background-color: white;
   opacity: 0.8;
   color: black;
   border: solid;
   border-color: black;
   height: 120px;
-  width: 120px;
+  width:  120px;
   text-align: center;
   float: left;
   font-size: 110px;

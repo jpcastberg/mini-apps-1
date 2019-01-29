@@ -1,0 +1,16 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Have a blast with your pals over a good ol' fashioned game of tic-tac-toe!",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Castberg",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-generator": "^4.16.0",
+    "path": "^0.12.7"
+  }
+}
