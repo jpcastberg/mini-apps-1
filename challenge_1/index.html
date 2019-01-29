@@ -2,29 +2,32 @@
 <html>
 <head>
   <script type="text/javascript" src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="shortcut icon" href="images.ico">
   <title>Tic Tac Toe!</title>
 </head>
   <body>
-    
-    <div class="row" id="row0">
-      <button class="square" id="00"></button>
-      <button class="square" id="01"></button>
-      <button class="square" id="02"></button>
+    <div class="game">
+      <div class="row" id="row0">
+        <span class="square" id="00"></span>
+        <span class="square" id="01"></span>
+        <span class="square" id="02"></span>
+      </div>
+      <div class="row" id="row1">
+        <span class="square" id="10"></span>
+        <span class="square" id="11"></span>
+        <span class="square" id="12"></span>
+      </div>
+      <div class="row" id="row2">
+        <span class="square" id="20"></span>
+        <span class="square" id="21"></span>
+        <span class="square" id="22"></span>
+      </div>
+      <h2 id="your-move">It's your move, X!</h2>
+      <button id="reset">Reset!</button>
+      <h2 class="win-counter" id="x-wins">X Wins: 0</h2>
+      <h2 class="win-counter" id="o-wins">O Wins: 0</h2>
     </div>
-    <div class="row" id="row1">
-      <button class="square" id="10"></button>
-      <button class="square" id="11"></button>
-      <button class="square" id="12"></button>
-    </div>
-    <div class="row" id="row2">
-      <button class="square" id="20"></button>
-      <button class="square" id="21"></button>
-      <button class="square" id="22"></button>
-    </div>
-    <h4 id="your-move">It's your move, X!</h4>
-    <button id="reset">Reset!</button>
-    <h4 class="win-counter" id="x-wins">X Wins: 0</h4>
-    <h4 class="win-counter" id="o-wins">O Wins: 0</h4>
   </body>
 </html>
 

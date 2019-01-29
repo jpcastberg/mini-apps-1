@@ -1,0 +1,43 @@
+body {
+  background-image: url('https://newevolutiondesigns.com/images/freebies/space-wallpaper-5.jpg');
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+.square {
+  background-color: white;
+  opacity: 0.8;
+  color: black;
+  border: solid;
+  border-color: black;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  float: left;
+  font-size: 110px;
+  cursor: pointer;
+}
+
+.game {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#reset {
+  background-color: white;
+  opacity: 0.8;
+  border: solid;
+  border-color: black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  outline: none;
+}

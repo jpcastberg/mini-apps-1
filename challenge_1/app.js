@@ -71,7 +71,8 @@ const checkForWin = (row, col) => {
   
   if (winningBoard) {
     setTimeout(() => {
-      alert(currentPlayer + ' wins!');
+      document.getElementById('your-move').innerHTML = currentPlayer + ' wins!'
+      alert(currentPlayer + ' Wins!');
       currentPlayer === 'X' ? XWins++ : OWins++;
       document.getElementById('x-wins').innerHTML = 'X Wins: ' + XWins;
       document.getElementById('o-wins').innerHTML = 'O Wins: ' + OWins;
