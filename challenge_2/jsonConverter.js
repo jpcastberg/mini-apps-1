@@ -12,7 +12,8 @@
 // You may also assume that child records in the JSON
 // will always be in a property called `children`.
 
-const convertJSONToCSV = (JSON) => {
+// const convertJSONToCSV =
+module.exports = (JSON) => {
   let CSVOutput = '';
   let headers = {};
   let headersArr;
